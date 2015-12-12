@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CENSOR ME PLEASE</title>
+	<style type="text/css">
+    body 
+    {
+      font-family: 'Roboto', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+    h1 
+    {
+      text-align: center;
+      padding: 50px 0;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: -1px;
+      color: inherit;
+      font-size: 40px;
+    }
+    small 
+    {
+      text-align: center;
+      font-size: 17px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .center 
+    {
+      text-align: center;
+      margin: auto;
+    }
+
+
+    section 
+    {
+      height: 100vh;
+    }
+
+    textarea#styled 
+    {
+      width: 1266px;
+      height: 400px;
+      border: 3px solid #cccccc;
+      padding: 5px;
+      font-family: 'Roboto', sans-serif;
+      background-image: url(bg.gif);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+    }
+
+  </style>
+</head>
+<body>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+    <section style="background: #3498db; color: #fff;">
+        <h1>{{ Line1 }}</h1>
+        <p class="center">{{ Line2 }}</p>
+        <form action="/censored" method="post">
+            <textarea name="my_text" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')">{{ Line3 }}</textarea>
+            <input type="submit" value="CENSOR ME"></input>
+        </form>
+        <form action="/revert" method="get">
+              <input type="submit" value="REVERT"> </input>
+        </form>
+    </section>
+</body>
+<script type="text/javascript">
+  function setbg(color)
+    {
+      document.getElementById("styled").style.background=color;
+    }
+</script>
+</html>
