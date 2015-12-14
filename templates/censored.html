@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CENSORED TEXTS</title>
+		<style>
+			body 
+			{
+				background-color: #3399ff;
+				font-family: 'Roboto' Sans-serif;
+				text-align: center;
+				color: #ffffff;
+				font-size: 40px;
+				font-weight: bolder;
+			}
+			div#text
+			{
+				background-image: url("paper.gif");
+				background-color: #cccccc;
+				font-family: inherit;
+				font-size: 15px;
+				font-weight: normal;
+			}		
+			div#text2
+			{
+				font-family: inherit;
+				font-size: 20px;
+				font-weight: normal;
+				color: #000000;
+			}
+			textarea#mytext
+			{
+				position: relative;
+				width: 1166px;
+				height: 400px;
+				left; 50px;
+				border: 6px solid #cccccc;
+				font-size: 17px;
+				text-align: left;
+			}			
+
+		</style>
+	</head>
+	<body>
+	<p>Here are all the texts we have censored for you.</p>
+		<div id="text">
+				{% for n in Texts %}
+				<p style="font-family:Roboto;font-size:18px;color:#000000"><b>ORIGINAL TEXT</b></p>
+				<textarea id="mytext">{{ n[0] }}</textarea>
+				<p style="font-family:Roboto;font-size:18px;color:#000000"><b>CENSORED TEXT</b></p>
+				<textarea id="mytext">{{ n[1] }}</textarea>
+				{% endfor %}
+		</div>
+		<div id="text2"><p><i>Thank you for trusting us with your censoring needs.</i></p></div>
+	</body>
+</html>

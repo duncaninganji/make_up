@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CENSORED TEXTS</title>
+		<style>
+			body 
+			{
+				background-color: #3399ff;
+			}
+		</style>
+	</head>
+	<body>
+	<p>Here are all the texts we have censored for you.</p>
+		<ul>
+			{% for n in range(len(originals)) %}
+			<p>ORIGINAL TEXT</p>
+			<p>{{ original[n] }}</p>
+			<p>CENSORED TEXT</p>
+			<p>{{ censored[n] }}</p>
+			{% endfor %}
+		</ul>
+		<p>Thank you for trusting us with your censoring needs.</p>
+	</body>
+</html>
