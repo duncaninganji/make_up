@@ -59,7 +59,7 @@
         <p class="center">{{ Line2 }}</p>
         <form action="/censored" method="post">
             <textarea name="my_text" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')">{{ Line3 }}</textarea>
-            <input type="submit" value="CENSOR ME"></input>
+            <input type="submit" value="CENSOR ME" onclick="val();"></input>
         </form>
         <form action="/revert" method="get">
               <input type="submit" value="REVERT"> </input>
@@ -73,6 +73,26 @@
   function setbg(color)
     {
       document.getElementById("styled").style.background=color;
+    }
+    function val()
+    {
+      if (trimAll(document.getElementById('styled').value) === '')
+      {
+         alert('You have not entered any text!');
+      }
+    } 
+
+    function trimAll(sString)
+    {
+        while (sString.substring(0,1) == ' ')
+        {
+            sString = sString.substring(1, sString.length);
+        }
+        while (sString.substring(sString.length-1, sString.length) == ' ')
+        {
+            sString = sString.substring(0,sString.length-1);
+        }
+    return sString;
     }
 </script>
 </html>
